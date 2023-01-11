@@ -32,13 +32,14 @@ while (monto != "salir") {
 
     let monto = (prompt("Ingrese un monto o SALIR para finalizar"));
     if (monto != "salir") {
+        const amount = Number(monto)
+        let cuotas = Number.parseInt(prompt("Ingrese la cantidad de cuotas deseadas (3-6-12): "));
 
-        let cuotas = parseFloat(prompt("Ingrese la cantidad de cuotas deseadas (3-6-12): "));
-
-        console.log("Solicitaste: ", "$", monto, "en", cuotas, "cuotas");
-        console.log("Total a pagar:", monto + calcular_interes(monto, cuotas));
-        console.log("Valor de cada Cuota: ", (monto + calcular_interes(monto, cuotas)) / cuotas);
+        console.log("Solicitaste: ", "$", amount, "en", cuotas, "cuotas");
+        console.log("Total a pagar:", (amount + calcular_interes(Number(amount), cuotas)));
+        console.log("Valor de cada Cuota: ", (amount + calcular_interes(amount, cuotas)) / cuotas);
     }
+    else break
 }
 
 console.log("Gracias por visitar PrestamosGali");
